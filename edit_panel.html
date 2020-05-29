@@ -1,0 +1,59 @@
+<html>
+	<head>
+<style type="text/css">
+/* CSS BEGIN */
+.bot-console {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	z-index: 100;
+	background-color: rgb(142, 142, 142);
+}
+.bot-header {
+	padding-left: 30px;
+	padding-top: 5px;
+	color: white;
+	font: 12px/20px Lato,Verdana,Arial,geneva,sans-serif;
+	font-size: 14px;	
+}
+.bot-button-group {
+	display: inline-block;
+	padding-left: 30px;
+}
+#bot-code-editor {
+	height: 100%;
+}
+/* CSS END */
+</style>
+	</head>
+	<body>
+<!-- HTML BEGIN -->
+		<div class="bot-console">
+			<div class="bot-header">
+				Write a Docking Bot!
+				<div class="bot-button-group">
+					<button id="bot-btn-deploy">Deploy code</button>
+					<button id="bot-btn-restart">Restart simulation</button>
+					<button id="bot-btn-minimize">Minimize Window</button>
+				</div>
+			</div>
+<pre id="bot-code-editor">
+function calculateControls() {
+	return 4;
+}
+</pre>
+		</div>
+<!-- HTML END -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+// JS BEGIN
+ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11');
+var editor = ace.edit("bot-code-editor");
+editor.session.setMode("ace/mode/javascript");
+editor.setTheme("ace/theme/dracula");
+// JS END
+		</script>
+	</body>
+</html>
