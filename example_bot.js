@@ -13,9 +13,9 @@ POSITIVE_LARGE = 2;
 //
 
 var initialized = false;
-var lastX = undefined;
-var lastY = undefined;
-var lastZ = undefined;
+var lastX;
+var lastY;
+var lastZ;
 
 function calculateControl(
 	posX,		// - forward		+ backward
