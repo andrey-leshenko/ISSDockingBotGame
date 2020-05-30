@@ -1,0 +1,122 @@
+<!--
+	This is a mock page for the editor window.
+	We manually take the HTML, CSS and JS from this page, copy it to the hooking code,
+	and inject it into the SpaceX simulator page.
+-->
+
+<html>
+	<head>
+<style type="text/css">
+/* CSS BEGIN */
+.bot-editor-window {
+	position: absolute;
+	display: flex;
+	flex-flow: column;
+	z-index: 100;
+
+	background-color: rgb(142, 142, 142);
+}
+
+/* Different window sizes */
+.bot-editor-window {
+	top: 30px;
+	left: 30px;
+	width: 600px;
+	height: 600px;
+}
+.bot-editor-window.maximized {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.bot-editor-window.minimized {
+	top: 30px;
+	left: 30px;
+	width: 600px;
+	height: auto;
+}
+
+.bot-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	padding-left: 15px;
+	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	color: white;
+	font: 12px/20px Lato,Verdana,Arial,geneva,sans-serif;
+	font-size: 14px;	
+}
+.bot-header button {
+	margin: 0 3px;
+}
+#bot-btn-restart {
+	margin-left: 30px;
+}
+#bot-btn-minimize {
+	margin-left: auto;
+}
+
+#bot-code-editor {
+	height: 100%;
+	margin: 0;
+	flex-grow: 1;
+}
+.bit-editor-window.minimized > #bot-code-editor {
+	display: none;
+}
+#bot-output {
+	padding: 5px 15px;
+	font-family: monospace;
+	color: white;
+	background-color: rgb(1, 63, 10);
+	margin: 0;
+}
+#bot-output.bot-error{
+	background-color: rgb(189, 0, 2);
+}
+/* CSS END */
+</style>
+	</head>
+	<body style="background-color: black">
+<!-- HTML BEGIN -->
+		<div class="bot-editor-window">
+			<div class="bot-header">
+				ISS Docking Bot
+				<button id="bot-btn-restart">Update & Restart</button>
+				<button id="bot-btn-update">Update</button>
+				<button id="bot-btn-minimize">&#x23BD;</button>
+				<button id="bot-btn-maximize">&#x25AD;</button>
+			</div>
+			<pre id="bot-code-editor">console.log('hello world!');</pre>
+			<pre id="bot-output">Output Control: [0, 0, 1, 0, 0, 1]</pre>
+		</div>
+<!-- HTML END -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11/ace.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+// JS BEGIN
+ace.config.set('basePath', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.11');
+var editor = ace.edit("bot-code-editor");
+editor.session.setMode("ace/mode/javascript");
+editor.setTheme("ace/theme/dracula");
+
+var editorWindow = document.getElementsByClassName('bot-editor-window')[0];
+
+document.getElementById('bot-btn-minimize').addEventListener('click', function() {
+	editorWindow.classList.toggle('minimized');
+	editorWindow.classList.remove('maximized');
+	editor.resize();
+});
+document.getElementById('bot-btn-maximize').addEventListener('click', function() {
+	editorWindow.classList.toggle('maximized');
+	editorWindow.classList.remove('minimized');
+	editor.resize();
+});
+// JS END
+		</script>
+	</body>
+</html>
