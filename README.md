@@ -1,4 +1,4 @@
-# Write a Bot to Dock to the ISS
+# Write a bot that plays SpaceX's ISS docking simulation
 
 SpaceX have released [iss-sim.spacex.com](https://iss-sim.spacex.com/),
 a graphical simulation that lets you manually pilot a spacecraft and dock it to the International Space Station.
