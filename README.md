@@ -12,8 +12,19 @@ and returns acceleration commands to be executed. Your function will be used to 
 ## Getting Started
 
 1. Got to [iss-sim.spacex.com](https://iss-sim.spacex.com/)
-2. Open the browser's JavaScript console, and paste in `console.log("hello world!")`
+2. Open the browser's JavaScript console, and **copy-paste in** the contents of [hook.js](https://raw.githubusercontent.com/andrey-leshenko/ISSDockingBotGame/master/hook.js).
 3. A code editor with a skeleton for a bot will open. There are buttons to run the bot you have written, and to restart the simulation.
+
+_Suggestion: Read about PID controllers, a simple and effective tool._
+
+
+![Bot editor screenshot](https://github.com/andrey-leshenko/ISSDockingBotGame/blob/master/screenshot.png)
+
+## Example Bot
+
+The file [example_bot.js](https://github.com/andrey-leshenko/ISSDockingBotGame/blob/master/example_bot.js)
+contains a simple PID controller-based bot that successfully docs to the ISS.
+Note that it still has a lot of space for improvement!
 
 ## Implementation Details
 
