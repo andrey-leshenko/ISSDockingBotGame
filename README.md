@@ -40,6 +40,6 @@ When a user inserts the JavaScript code into the simulation website:
 
 ## Credits
 
-- Thanks for SpaceX for making this cool simulation.
-- Thanks for Daniils Petrovs who wrote an [autopilot bot in clojure](https://github.com/DaniruKun/spacex-iss-docking-sim-autopilot),
+- Thanks to SpaceX for making this cool simulation.
+- Thanks to Daniils Petrovs who wrote an [autopilot bot in clojure](https://github.com/DaniruKun/spacex-iss-docking-sim-autopilot),
   which inspired me to do this project.
